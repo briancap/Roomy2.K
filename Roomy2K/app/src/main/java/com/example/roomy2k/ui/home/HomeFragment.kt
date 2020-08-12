@@ -10,8 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roomy.adapters.AdapterGridItem
 import com.example.roomy2k.R
+import com.example.roomy2k.TestData
+import com.example.roomy2k.adapters.AdapterGridItem
 
 class HomeFragment : Fragment() {
 
@@ -29,7 +30,7 @@ class HomeFragment : Fragment() {
         val _gridBills: RecyclerView = root.findViewById( R.id.home_grid_bills )
         _gridBills.setHasFixedSize( true )
         _gridBills.setLayoutManager( GridLayoutManager( context, 4))
-        _gridBills.setAdapter( AdapterGridItem() )
+        _gridBills.setAdapter( AdapterGridItem( context, TestData( context ).getBills() ) )
         /*
         val textView: TextView = root.findViewById(R.id.home_grid_bills)
 
