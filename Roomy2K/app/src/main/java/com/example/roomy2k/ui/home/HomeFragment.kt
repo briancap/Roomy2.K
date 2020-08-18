@@ -27,10 +27,15 @@ class HomeFragment : Fragment() {
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val _gridBills: RecyclerView = root.findViewById( R.id.home_grid_bills )
-        _gridBills.setHasFixedSize( true )
-        _gridBills.setLayoutManager( GridLayoutManager( context, 4))
-        _gridBills.setAdapter( AdapterGridItem( context, TestData( context ).getBills() ) )
+        val gridBills: RecyclerView = root.findViewById( R.id.home_grid_bills )
+        gridBills.setHasFixedSize( true )
+        gridBills.layoutManager = GridLayoutManager( context, 3)
+        gridBills.adapter = AdapterGridItem(context, TestData(context).getBills())
+
+        val gridSharedItems: RecyclerView = root.findViewById( R.id.home_grid_shared_items )
+        gridSharedItems.setHasFixedSize( true )
+        gridSharedItems.layoutManager = GridLayoutManager( context, 3 )
+        gridSharedItems.adapter = AdapterGridItem( context, TestData( context ).getSharedItems() )
         /*
         val textView: TextView = root.findViewById(R.id.home_grid_bills)
 
