@@ -32,13 +32,13 @@ class TestData( context : Context?){
         val map3: MutableMap<String, String> = mutableMapOf()
         map3.put( gridLabel, "Electric" )
 
-       // val map4: MutableMap<String, String> = mutableMapOf()
-        //map4.put( gridLabel, "Gas" )
+        val map4: MutableMap<String, String> = mutableMapOf()
+        map4.put( gridLabel, "Gas" )
 
         data.add( map1 )
         data.add( map2 )
         data.add( map3 )
-       // data.add( map4 )
+        data.add( map4 )
 
         return data
     }
@@ -66,6 +66,29 @@ class TestData( context : Context?){
         data.add( map3 )
         data.add( map4 )
         data.add( map5 )
+
+        return data
+    }
+
+    fun getChores() : MutableList<MutableMap<String, String>>{
+        var data : MutableList<MutableMap<String, String>> = mutableListOf()
+
+        val map1: MutableMap<String, String> = mutableMapOf()
+        map1.put( gridLabel, "Clean Kitchen" )
+
+        val map2: MutableMap<String, String> = mutableMapOf()
+        map2.put( gridLabel, "Clean Shower" )
+
+        val map3: MutableMap<String, String> = mutableMapOf()
+        map3.put( gridLabel, "Clean Toilet" )
+
+        val map4: MutableMap<String, String> = mutableMapOf()
+        map4.put( gridLabel, "Sweep Floor" )
+
+        data.add( map1 )
+        data.add( map2 )
+        data.add( map3 )
+        data.add( map4 )
 
         return data
     }
