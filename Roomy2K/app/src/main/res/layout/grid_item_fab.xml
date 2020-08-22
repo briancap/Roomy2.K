@@ -8,6 +8,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/grid_item_fab"
         app:fabSize="normal"
+        app:tint="@color/fab_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
