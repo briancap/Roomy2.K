@@ -15,7 +15,7 @@
     <!-- Home Page -->
     <string name="title_bills">Bills</string>
     <string name="title_shared_items">Shared Items</string>
-    <string name="title_chores">Chores</string>
+    <string name="title_weekly_chore">Weekly Chore</string>
 
     //used by adapter
     <string name="adapter_item_label">adapter_item_label</string>

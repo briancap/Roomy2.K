@@ -42,13 +42,13 @@ class HomeFragment : Fragment() {
         listSharedItems.layoutManager = LinearLayoutManager( context )
         listSharedItems.adapter = AdapterSharedItems( context, TestData( context ).getSharedItems() )
 
-
+/*
         //Chores Section
         val gridChores: RecyclerView = root.findViewById( R.id.home_grid_chores )
         gridChores.setHasFixedSize( true )
         gridChores.layoutManager = GridLayoutManager( context, 4 )
         gridChores.adapter = AdapterGridItem( context, TestData( context ).getChores() )
-
+*/
 
         /*
         val textView: TextView = root.findViewById(R.id.home_grid_bills)
