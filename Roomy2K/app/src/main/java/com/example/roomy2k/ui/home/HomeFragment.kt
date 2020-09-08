@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 import com.example.roomy2k.TestData
 import com.example.roomy2k.adapters.AdapterGridFab
 import com.example.roomy2k.adapters.AdapterGridItem
+import com.example.roomy2k.adapters.AdapterSharedItems
 
 class HomeFragment : Fragment() {
 
@@ -35,23 +37,25 @@ class HomeFragment : Fragment() {
         gridBills.adapter = AdapterGridFab(context, TestData(context).getBills())
 
         //Shared Item Section
-        val gridSharedItems: RecyclerView = root.findViewById( R.id.home_grid_shared_items )
-        gridSharedItems.setHasFixedSize( true )
-        gridSharedItems.layoutManager = GridLayoutManager( context, 3 )
-        gridSharedItems.adapter = AdapterGridItem( context, TestData( context ).getSharedItems() )
+        val listSharedItems: RecyclerView = root.findViewById( R.id.home_list_shared )
+        listSharedItems.setHasFixedSize( true )
+        listSharedItems.layoutManager = LinearLayoutManager( context )
+        listSharedItems.adapter = AdapterSharedItems( context, TestData( context ).getSharedItems() )
+
 
         //Chores Section
         val gridChores: RecyclerView = root.findViewById( R.id.home_grid_chores )
         gridChores.setHasFixedSize( true )
         gridChores.layoutManager = GridLayoutManager( context, 4 )
         gridChores.adapter = AdapterGridItem( context, TestData( context ).getChores() )
+
+
         /*
         val textView: TextView = root.findViewById(R.id.home_grid_bills)
 
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
-
          */
         return root
     }

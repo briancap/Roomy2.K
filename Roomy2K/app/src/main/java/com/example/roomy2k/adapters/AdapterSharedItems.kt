@@ -45,7 +45,7 @@ class AdapterSharedItems(val context : Context?, private val adapterData : Mutab
     ) {
         val itemData : MutableMap<String, String> = adapterData.get( position )
 
-        holder.sharedItemIcon.setImageResource( R.drawable.ic_launcher_background )
+        holder.sharedItemIcon.setImageResource( R.drawable.ic_menu_camera )
         holder.sharedItemName.text = itemData[ itemLabel ]
         holder.sharedItemProgressBar.progress = 40
     }

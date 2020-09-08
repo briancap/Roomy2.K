@@ -19,27 +19,27 @@
 
     <TextView
         android:id="@+id/li_shared_name"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:text="Rent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/li_shared_image"
+        app:layout_constraintBottom_toBottomOf="@id/li_shared_image"
         app:layout_constraintStart_toEndOf="@id/li_shared_image"
         />
 
     <ProgressBar
         android:id="@+id/li_shared_progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:indeterminate="false"
         android:max="100"
-        android:layout_width="0dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/li_shared_name"
+        app:layout_constraintTop_toTopOf="@id/li_shared_image"
+        app:layout_constraintBottom_toBottomOf="@id/li_shared_image"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
