@@ -6,13 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 
 class AdapterGridFab(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterGridFab.ViewHolder>() {
@@ -25,7 +22,7 @@ class AdapterGridFab(val context : Context?, private val adapterData : MutableLi
         if( context != null ){
             val resources : Resources = context.resources
 
-            gridLabel = resources.getString( R.string.adapter_grid_label )
+            gridLabel = resources.getString( R.string.adapter_item_label )
         }
     }
 

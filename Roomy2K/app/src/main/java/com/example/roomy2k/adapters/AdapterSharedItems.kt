@@ -6,26 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 
 
-class AdapterGridItem(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterGridItem.ViewHolder>() {
+class AdapterSharedItems(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
 
-    lateinit var gridLabel : String
+    lateinit var itemLabel : String
 
     init{
         if( context != null ){
             val resources : Resources = context.resources
 
-            gridLabel = resources.getString( R.string.adapter_item_label )
+            itemLabel = resources.getString( R.string.adapter_item_label )
         }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var gridItemImage: ImageView = view.findViewById(R.id.grid_item_image)
-        var gridItemName: TextView = view.findViewById(R.id.grid_item_label)
+        var sharedItemIcon: ImageView = view.findViewById( R.id.li_shared_image )
+        var sharedItemName: TextView = view.findViewById( R.id.li_shared_name )
+        var sharedItemProgressBar: ProgressBar = view.findViewById( R.id.li_shared_progress_bar )
     }
 
     override fun onCreateViewHolder(
@@ -33,7 +35,7 @@ class AdapterGridItem(val context : Context?, private val adapterData : MutableL
         viewType: Int
     ): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.grid_item_bills, parent, false)
+            .inflate(R.layout.list_item_shared_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -43,8 +45,9 @@ class AdapterGridItem(val context : Context?, private val adapterData : MutableL
     ) {
         val itemData : MutableMap<String, String> = adapterData.get( position )
 
-        holder.gridItemName.text = itemData[ gridLabel ]
-        holder.gridItemImage.setImageResource( R.drawable.ic_launcher_background )
+        holder.sharedItemIcon.setImageResource( R.drawable.ic_launcher_background )
+        holder.sharedItemName.text = itemData[ itemLabel ]
+        holder.sharedItemProgressBar.progress = 40
     }
 
     override fun getItemCount(): Int {

@@ -16,7 +16,7 @@ class TestData( context : Context?){
     init {
         //string constants
         if ( resources != null ){
-            gridLabel = resources?.getString(R.string.adapter_grid_label)
+            gridLabel = resources?.getString(R.string.adapter_item_label)
         }
     }
 
