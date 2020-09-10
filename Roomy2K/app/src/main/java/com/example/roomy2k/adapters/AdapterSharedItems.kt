@@ -12,15 +12,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 
 
-class AdapterSharedItems(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
+class AdapterSharedItems(val context : Context?, private val adapterData : MutableList<MutableMap<String, Object>> ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
 
     lateinit var itemLabel : String
+    lateinit var itemRemaining : String
 
     init{
         if( context != null ){
             val resources : Resources = context.resources
 
             itemLabel = resources.getString( R.string.adapter_item_label )
+            itemRemaining = resources.getString( R.string.adapter_item_remaining )
         }
     }
 
@@ -43,11 +45,11 @@ class AdapterSharedItems(val context : Context?, private val adapterData : Mutab
         holder: ViewHolder,
         position: Int
     ) {
-        val itemData : MutableMap<String, String> = adapterData.get( position )
+        val itemData : MutableMap<String, Object> = adapterData.get( position )
 
         holder.sharedItemIcon.setImageResource( R.drawable.ic_menu_camera )
-        holder.sharedItemName.text = itemData[ itemLabel ]
-        holder.sharedItemProgressBar.progress = 40
+        holder.sharedItemName.text = itemData[itemLabel] as String
+        holder.sharedItemProgressBar.progress = itemData[itemRemaining] as Int
     }
 
     override fun getItemCount(): Int {
