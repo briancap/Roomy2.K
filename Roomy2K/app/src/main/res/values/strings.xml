@@ -17,7 +17,12 @@
     <string name="title_shared_items">Shared Items</string>
     <string name="title_weekly_chore">Weekly Chore</string>
 
-    //used by adapter
+    <!--used by adapter -->
     <string name="adapter_item_label">adapter_item_label</string>
     <string name="adapter_item_remaining">adapter_item_remaining</string>
+
+    <!--used by intents -->
+    <string name="intent_activity_start_reason">intent_activity_start_reason</string>
+    <string name="intent_activity_start_reason_detail_bill">intent_activity_start_reason_detail_bill</string>
+    <string name="intent_activity_start_reason_detail_shared">intent_activity_start_reason_detail_shared</string>
 </resources>
