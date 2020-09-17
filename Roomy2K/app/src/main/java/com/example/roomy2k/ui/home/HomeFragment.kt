@@ -1,15 +1,19 @@
 package com.example.roomy2k.ui.home
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.roomy2k.BillDetailActivity
 import com.example.roomy2k.R
 import com.example.roomy2k.TestData
 import com.example.roomy2k.adapters.AdapterGridFab
@@ -49,11 +53,15 @@ class HomeFragment : Fragment() {
                 listSharedItems,
                 object : RecyclerItemClickListener.OnItemClickListener {
                     override fun onItemClick(view: View?, position: Int) {
-                        Log.e( LOG_TAG, "onItemClick" )
+                        Log.e(LOG_TAG, "onItemClick")
+                        val intent = Intent( context, BillDetailActivity::class.java ).apply {
+                            putExtra( "test", "test value")
+                        }
+                        startActivity( intent )
                     }
 
                     override fun onLongItemClick(view: View?, position: Int) {
-                        Log.e( LOG_TAG, "onLongItemClick" )
+                        Log.e(LOG_TAG, "onLongItemClick")
                     }
                 }
             )
