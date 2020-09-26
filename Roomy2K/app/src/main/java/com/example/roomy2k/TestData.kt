@@ -6,11 +6,14 @@ import android.content.res.Resources
 
 
 
-class TestData( context : Context?){
+class TestData(){
 
-    val resources: Resources? = context?.resources
+    constructor( appContext : Context? ) : this(){
+        context = appContext
+    }
 
     //string contants
+    var context : Context? = null
     lateinit var gridLabel : String
     lateinit var itemLabel : String
 
@@ -18,10 +21,18 @@ class TestData( context : Context?){
 
     init {
         //string constants
-        if ( resources != null ){
-            gridLabel = resources?.getString(R.string.adapter_item_label)
-            itemLabel = resources?.getString( R.string.adapter_item_label )
-            itemRemaining = resources?.getString( R.string.adapter_item_remaining )
+
+        if( context != null) {
+            val resources: Resources? = context?.resources
+            if (resources != null) {
+                gridLabel = resources?.getString(R.string.adapter_item_label)
+                itemLabel = resources?.getString(R.string.adapter_item_label)
+                itemRemaining = resources?.getString(R.string.adapter_item_remaining)
+            }
+        } else {
+            gridLabel = "adapter_item_label"
+            itemLabel = "adapter_item_label"
+            itemRemaining = "adapter_item_remaining"
         }
     }
 
@@ -47,6 +58,8 @@ class TestData( context : Context?){
 
         return data
     }
+
+
 
     fun getSharedItems() : MutableList<MutableMap<String, Object>>{
         var data : MutableList<MutableMap<String, Object>> = mutableListOf()

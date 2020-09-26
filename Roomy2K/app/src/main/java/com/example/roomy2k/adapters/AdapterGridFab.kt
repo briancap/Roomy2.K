@@ -12,13 +12,15 @@ import com.example.roomy2k.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class AdapterGridFab(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterGridFab.ViewHolder>() {
+class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGridFab.ViewHolder>() {
 
     val LOG_TAG: String = javaClass.name
 
     lateinit var gridLabel : String
+    var adapterData : MutableList<MutableMap<String, String>> = mutableListOf()
 
     init{
+        Log.e( LOG_TAG, "in init" )
         if( context != null ){
             val resources : Resources = context.resources
 
@@ -53,6 +55,12 @@ class AdapterGridFab(val context : Context?, private val adapterData : MutableLi
     }
 
     override fun getItemCount(): Int {
-        return adapterData.size
+            return adapterData.size
+    }
+
+    fun setData( data : MutableList<MutableMap<String, String>> ){
+        Log.e( LOG_TAG, "in setData" )
+        adapterData = data
+        notifyDataSetChanged()
     }
 }

@@ -7,6 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,22 +25,30 @@ import com.example.roomy2k.custom.RecyclerItemClickListener
 class HomeFragment : Fragment() {
 
     val LOG_TAG: String = javaClass.name
-    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
+
+        val homeViewModel : HomeViewModel by viewModels()
+
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
         //Bill Section
         val gridBills: RecyclerView = root.findViewById(R.id.home_grid_bills)
         gridBills.setHasFixedSize(true)
         gridBills.layoutManager = GridLayoutManager(context, 4)
-        gridBills.adapter = AdapterGridFab(context, TestData(context).getBills())
+
+        val billsAdapter : AdapterGridFab = AdapterGridFab( context )
+        gridBills.adapter = billsAdapter
+
+        homeViewModel.getBills().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, String>>>{ bills ->
+            Log.e( LOG_TAG, "in get Bills observe" )
+            billsAdapter.setData( bills )
+        })
+
 
         gridBills.addOnItemTouchListener(
             RecyclerItemClickListener(
