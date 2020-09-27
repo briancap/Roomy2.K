@@ -2,6 +2,7 @@ package com.example.roomy2k.adapters
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +13,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 
 
-class AdapterSharedItems(val context : Context?, private val adapterData : MutableList<MutableMap<String, Object>> ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
+class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
+
+    val LOG_TAG: String = javaClass.name
 
     lateinit var itemLabel : String
     lateinit var itemRemaining : String
+
+    var adapterData : MutableList<MutableMap<String, Object>> = mutableListOf()
 
     init{
         if( context != null ){
@@ -54,5 +59,11 @@ class AdapterSharedItems(val context : Context?, private val adapterData : Mutab
 
     override fun getItemCount(): Int {
         return adapterData.size
+    }
+
+    fun setData( data : MutableList<MutableMap<String, Object>>  ){
+        Log.e( LOG_TAG, "in setData" )
+        adapterData = data
+        notifyDataSetChanged()
     }
 }

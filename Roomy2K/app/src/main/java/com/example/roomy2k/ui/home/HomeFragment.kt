@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -76,7 +77,14 @@ class HomeFragment : Fragment() {
         val listSharedItems: RecyclerView = root.findViewById(R.id.home_list_shared)
         listSharedItems.setHasFixedSize(true)
         listSharedItems.layoutManager = LinearLayoutManager(context)
-        listSharedItems.adapter = AdapterSharedItems(context, TestData(context).getSharedItems())
+
+        var sharedItemAdapter = AdapterSharedItems( context )
+        listSharedItems.adapter = sharedItemAdapter
+
+        homeViewModel.getSharedItems().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, Object>>>{ sharedItems ->
+            Log.e( LOG_TAG, "in get Bills observe" )
+            sharedItemAdapter.setData( sharedItems )
+        })
 
         listSharedItems.addOnItemTouchListener(
             RecyclerItemClickListener(

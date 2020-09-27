@@ -25,12 +25,12 @@ class HomeViewModel: ViewModel() {
 
     //Shared Items
     private val _sharedItems = MutableLiveData<MutableList<MutableMap<String, Object>>>().apply{
-        Log.e( LOG_TAG, "in billData apply section" )
+        Log.e( LOG_TAG, "in sharedItems apply section" )
         value = testData.getSharedItems()
     }
 
     fun getSharedItems() : LiveData<MutableList<MutableMap<String, Object>>> {
-        Log.e( LOG_TAG, "in getBills" )
+        Log.e( LOG_TAG, "in getSharedItems" )
         return _sharedItems
     }
 
