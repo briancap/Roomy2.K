@@ -25,4 +25,11 @@
     <string name="intent_activity_start_reason">intent_activity_start_reason</string>
     <string name="intent_activity_start_reason_detail_bill">intent_activity_start_reason_detail_bill</string>
     <string name="intent_activity_start_reason_detail_shared">intent_activity_start_reason_detail_shared</string>
+    <string name="intent_activity_start_bill_name">intent_activity_start_bill_name</string>
+
+
+    <!-- Bill Detail Page -->
+    <string name="title_bill_overview">Bill Overview</string>
+    <string name="title_bill_history">Bill History</string>
+
 </resources>

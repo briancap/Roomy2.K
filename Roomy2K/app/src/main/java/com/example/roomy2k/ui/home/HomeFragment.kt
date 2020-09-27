@@ -38,6 +38,8 @@ class HomeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
         //Bill Section
+        var billData : MutableList<MutableMap<String, String>> = mutableListOf()
+
         val gridBills: RecyclerView = root.findViewById(R.id.home_grid_bills)
         gridBills.setHasFixedSize(true)
         gridBills.layoutManager = GridLayoutManager(context, 4)
@@ -48,6 +50,7 @@ class HomeFragment : Fragment() {
         homeViewModel.getBills().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, String>>>{ bills ->
             Log.e( LOG_TAG, "in get Bills observe" )
             billsAdapter.setData( bills )
+            billData = bills
         })
 
 
@@ -60,6 +63,7 @@ class HomeFragment : Fragment() {
                         Log.e(LOG_TAG, "gridBills; onItemClick")
                         val intent = Intent( context, HomeDetailActivity::class.java ).apply {
                             putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_bill) )
+                            putExtra( resources.getString( R.string.intent_activity_start_bill_name ), billData.get( position ).get( resources.getString( R.string.adapter_item_label ) ) )
                         }
                         startActivity( intent )
                     }
