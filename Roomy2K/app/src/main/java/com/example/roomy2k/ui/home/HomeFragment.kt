@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         gridBills.adapter = billsAdapter
 
         homeViewModel.getBills().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, String>>>{ bills ->
-            Log.e( LOG_TAG, "in get Bills observe" )
+            Log.v( LOG_TAG, "in get Bills observe" )
             billsAdapter.setData( bills )
             billData = bills
         })
@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
                 gridBills,
                 object : RecyclerItemClickListener.OnItemClickListener{
                     override fun onItemClick(view: View?, position: Int) {
-                        Log.e(LOG_TAG, "gridBills; onItemClick")
+                        Log.v(LOG_TAG, "gridBills; onItemClick")
                         val intent = Intent( context, HomeDetailActivity::class.java ).apply {
                             putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_bill) )
                             putExtra( resources.getString( R.string.intent_activity_start_bill_name ), billData.get( position ).get( resources.getString( R.string.adapter_item_label ) ) )
@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
                     }
 
                     override fun onLongItemClick(view: View?, position: Int) {
-                        Log.e(LOG_TAG, "gridBills; onLongItemClick")
+                        Log.v(LOG_TAG, "gridBills; onLongItemClick")
                         onItemClick( view, position )
                     }
                 }
@@ -86,7 +86,7 @@ class HomeFragment : Fragment() {
         listSharedItems.adapter = sharedItemAdapter
 
         homeViewModel.getSharedItems().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, Object>>>{ sharedItems ->
-            Log.e( LOG_TAG, "in get Bills observe" )
+            Log.v( LOG_TAG, "in get Bills observe" )
             sharedItemAdapter.setData( sharedItems )
         })
 
@@ -96,7 +96,7 @@ class HomeFragment : Fragment() {
                 listSharedItems,
                 object : RecyclerItemClickListener.OnItemClickListener {
                     override fun onItemClick(view: View?, position: Int) {
-                        Log.e(LOG_TAG, "listSharedItems; onItemClick")
+                        Log.v(LOG_TAG, "listSharedItems; onItemClick")
                         val intent = Intent( context, HomeDetailActivity::class.java ).apply {
                             putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_shared) )
                         }
@@ -104,7 +104,7 @@ class HomeFragment : Fragment() {
                     }
 
                     override fun onLongItemClick(view: View?, position: Int) {
-                        Log.e(LOG_TAG, "listSharedItems; onLongItemClick")
+                        Log.v(LOG_TAG, "listSharedItems; onLongItemClick")
                         onItemClick( view, position )
                     }
                 }

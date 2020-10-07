@@ -14,23 +14,23 @@ class HomeViewModel: ViewModel() {
 
     //Bills
     private val _billData = MutableLiveData<MutableList<MutableMap<String, String>>>().apply{
-        Log.e( LOG_TAG, "in billData apply section" )
+        Log.v( LOG_TAG, "in billData apply section" )
         value = testData.getBills()
     }
 
     fun getBills() : LiveData<MutableList<MutableMap<String, String>>> {
-        Log.e( LOG_TAG, "in getBills" )
+        Log.v( LOG_TAG, "in getBills" )
         return _billData
     }
 
     //Shared Items
     private val _sharedItems = MutableLiveData<MutableList<MutableMap<String, Object>>>().apply{
-        Log.e( LOG_TAG, "in sharedItems apply section" )
+        Log.v( LOG_TAG, "in sharedItems apply section" )
         value = testData.getSharedItems()
     }
 
     fun getSharedItems() : LiveData<MutableList<MutableMap<String, Object>>> {
-        Log.e( LOG_TAG, "in getSharedItems" )
+        Log.v( LOG_TAG, "in getSharedItems" )
         return _sharedItems
     }
 

@@ -2,11 +2,12 @@ package com.example.roomy2k
 
 import android.content.Context
 import android.content.res.Resources
-
-
+import android.util.Log
 
 
 class TestData(){
+
+    val LOG_TAG: String = javaClass.name
 
     constructor( appContext : Context? ) : this(){
         context = appContext
@@ -36,6 +37,10 @@ class TestData(){
         }
     }
 
+
+    /**
+     * Home Frag data
+     */
     fun getBills() : MutableList<MutableMap<String, String>>{
         var data : MutableList<MutableMap<String, String>> = mutableListOf()
 
@@ -58,8 +63,6 @@ class TestData(){
 
         return data
     }
-
-
 
     fun getSharedItems() : MutableList<MutableMap<String, Object>>{
         var data : MutableList<MutableMap<String, Object>> = mutableListOf()
@@ -115,6 +118,79 @@ class TestData(){
         data.add( map4 )
 
         return data
+    }
+
+
+
+    /**
+     * BillDetail data
+     */
+    fun getBillData( billName : String? ) : MutableMap<String, Object>{
+        Log.e( LOG_TAG, "starting getBillData" )
+        var data : MutableMap<String, Object> = when( billName ) {
+            "Rent" -> getRentDetails()
+            "Internet" -> getInternetDtails()
+            "Electric" -> getElectricDetails()
+            "Gas" -> getGasDetails()
+            else -> mutableMapOf()
+        }
+
+        Log.e( LOG_TAG, "data = " + data.get( "amount") )
+
+        Log.e( LOG_TAG, "ending getBillData" )
+        return data
+    }
+
+    private fun getRentDetails() : MutableMap<String, Object>{
+        Log.e( LOG_TAG, "in getRentDetails" )
+        val map1: MutableMap<String, Object> = mutableMapOf()
+
+        map1.put( "amount", "1048.00" as Object )
+        map1.put( "due", "May 9th" as Object )
+        map1.put( "paymentMethod", "Venmo" as Object )
+        map1.put( "paidTo", "Brian" as Object )
+        map1.put( "paymentMode", "Auto" as Object )
+
+        return map1
+    }
+
+    private fun getInternetDtails() : MutableMap<String, Object>{
+        Log.e( LOG_TAG, "in getInternetDtails" )
+        val map1: MutableMap<String, Object> = mutableMapOf()
+
+        map1.put( "amount", "48.12" as Object )
+        map1.put( "due", "May 12th" as Object )
+        map1.put( "paymentMethod", "Venmo" as Object )
+        map1.put( "paidTo", "Stacey" as Object )
+        map1.put( "paymentMode", "Manual" as Object )
+
+        return map1
+    }
+
+    private fun getElectricDetails() : MutableMap<String, Object>{
+        Log.e( LOG_TAG, "in getElectricityDetails" )
+        val map1: MutableMap<String, Object> = mutableMapOf()
+
+        map1.put( "amount", "30.82" as Object )
+        map1.put( "due", "May 18th" as Object )
+        map1.put( "paymentMethod", "Venmo" as Object )
+        map1.put( "paidTo", "Stacey" as Object )
+        map1.put( "paymentMode", "Auto" as Object )
+
+        return map1
+    }
+
+    private fun getGasDetails() : MutableMap<String, Object>{
+        Log.e( LOG_TAG, "in getGasDetails" )
+        val map1: MutableMap<String, Object> = mutableMapOf()
+
+        map1.put( "amount", "12.32" as Object )
+        map1.put( "due", "May 3th" as Object )
+        map1.put( "paymentMethod", "Checking" as Object )
+        map1.put( "paidTo", "Stacey" as Object )
+        map1.put( "paymentMode", "Auto" as Object )
+
+        return map1
     }
 
 }

@@ -62,7 +62,7 @@ class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<Adapte
     }
 
     fun setData( data : MutableList<MutableMap<String, Object>>  ){
-        Log.e( LOG_TAG, "in setData" )
+        Log.v( LOG_TAG, "in setData" )
         adapterData = data
         notifyDataSetChanged()
     }

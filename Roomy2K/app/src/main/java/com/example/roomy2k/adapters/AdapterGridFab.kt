@@ -20,7 +20,7 @@ class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGrid
     var adapterData : MutableList<MutableMap<String, String>> = mutableListOf()
 
     init{
-        Log.e( LOG_TAG, "in init" )
+        Log.v( LOG_TAG, "in init" )
         if( context != null ){
             val resources : Resources = context.resources
 
@@ -50,7 +50,7 @@ class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGrid
 
         holder.gridItemFabLabel.text = itemData[ gridLabel ]
         holder.gridItemFab.setOnClickListener {
-            Log.e( LOG_TAG, "FAB clicked position = " + position )
+            Log.v( LOG_TAG, "FAB clicked position = " + position )
         }
     }
 
@@ -59,7 +59,7 @@ class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGrid
     }
 
     fun setData( data : MutableList<MutableMap<String, String>> ){
-        Log.e( LOG_TAG, "in setData" )
+        Log.v( LOG_TAG, "in setData" )
         adapterData = data
         notifyDataSetChanged()
     }
