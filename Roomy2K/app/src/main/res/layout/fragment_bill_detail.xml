@@ -206,8 +206,8 @@
 
 
     <TextView
-        android:text="@string/title_bill_history"
-        android:id="@+id/detail_bill_title_history"
+        android:text="@string/title_bill_trend"
+        android:id="@+id/detail_bill_title_trend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -219,15 +219,46 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/detail_bill_list_history"
-        android:layout_width="0dp"
+    <TextView
+        android:text="@string/title_bill_stats"
+        android:id="@+id/detail_bill_title_stats"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_history"
+        android:textColor="@color/text_secondary_grey"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_trend"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:text="@string/title_bill_other_options"
+        android:id="@+id/detail_bill_title_other_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/text_secondary_grey"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_stats"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:text="@string/title_bill_manage_account"
+        android:id="@+id/detail_bill_title_manage_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/text_secondary_grey"
+        android:textSize="14sp"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_other_options"
+        app:layout_constraintStart_toStartOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
