@@ -1,11 +1,14 @@
 package com.example.roomy2k.ui.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -21,6 +24,7 @@ import com.example.roomy2k.TestData
 import com.example.roomy2k.adapters.AdapterGridFab
 import com.example.roomy2k.adapters.AdapterSharedItems
 import com.example.roomy2k.custom.RecyclerItemClickListener
+import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -75,6 +79,52 @@ class HomeFragment : Fragment() {
                 }
             )
         )
+
+
+        //Weekly Chore Secction
+        var choreCompleted = false;
+        val markChoreCompltedButton : Button = root.findViewById( R.id.home_weekly_chore_mark_completed )
+        markChoreCompltedButton.setOnClickListener( View.OnClickListener {
+            Log.e( LOG_TAG, "in mark completed on click" )
+
+            if( !choreCompleted ) {
+                choreCompleted = true
+                markChoreCompltedButton.text = "COMPLETED: 10/9"
+
+                if (context != null) {
+                    markChoreCompltedButton.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context as Context,
+                            R.color.colorBackground
+                        )
+                    )
+                }
+            } else {
+                choreCompleted = false
+
+                markChoreCompltedButton.text = "MARK COMPLETED"
+
+                if (context != null) {
+                    markChoreCompltedButton.setBackgroundColor(
+                        ContextCompat.getColor(
+                            context as Context,
+                            R.color.fab_light
+                        )
+                    )
+                }
+            }
+        })
+
+
+        val viewAllChoreButton : Button = root.findViewById( R.id.home_title_weekly_chore_all )
+
+        viewAllChoreButton.setOnClickListener( View.OnClickListener {
+            Log.e( LOG_TAG, "in all chores on click" )
+            val intent = Intent( context, HomeDetailActivity::class.java ).apply {
+                putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_shared) )
+            }
+            startActivity( intent )
+        })
 
 
         //Shared Item Section
