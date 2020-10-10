@@ -121,7 +121,7 @@ class HomeFragment : Fragment() {
         viewAllChoreButton.setOnClickListener( View.OnClickListener {
             Log.e( LOG_TAG, "in all chores on click" )
             val intent = Intent( context, HomeDetailActivity::class.java ).apply {
-                putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_shared) )
+                putExtra( resources.getString( R.string.intent_activity_start_reason ), resources.getString(R.string.intent_activity_start_reason_detail_chore) )
             }
             startActivity( intent )
         })
