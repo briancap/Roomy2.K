@@ -204,49 +204,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-    <TextView
-        android:text="@string/title_bill_trend"
-        android:id="@+id/detail_bill_title_trend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/text_secondary_grey"
-        android:textSize="14sp"
-        android:textAllCaps="true"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment_mode"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <TextView
-        android:text="@string/title_bill_stats"
-        android:id="@+id/detail_bill_title_stats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/text_secondary_grey"
-        android:textSize="14sp"
-        android:textAllCaps="true"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_trend"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <TextView
-        android:text="@string/title_bill_other_options"
-        android:id="@+id/detail_bill_title_other_options"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/text_secondary_grey"
-        android:textSize="14sp"
-        android:textAllCaps="true"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_stats"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
     <TextView
         android:text="@string/title_bill_manage_account"
         android:id="@+id/detail_bill_title_manage_account"
@@ -257,7 +214,7 @@
         android:textColor="@color/text_secondary_grey"
         android:textSize="14sp"
         android:textAllCaps="true"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_other_options"
+        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment_mode"
         app:layout_constraintStart_toStartOf="parent"
         />
 

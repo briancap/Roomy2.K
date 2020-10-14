@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.roomy2k.ui.billDetail.BillDetailFragment
+import com.example.roomy2k.ui.choreDetail.ChoreDetailFragment
 import com.example.roomy2k.ui.home.HomeFragment
 
 
