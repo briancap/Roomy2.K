@@ -20,6 +20,8 @@
     <!--used by adapter -->
     <string name="adapter_item_label">adapter_item_label</string>
     <string name="adapter_item_remaining">adapter_item_remaining</string>
+    <string name="adapter_item_description">adapter_item_description</string>
+    <string name="adapter_item_chore_frequency">adapter_item_chore_frequency</string>
 
     <!--used by intents -->
     <string name="intent_activity_start_reason">intent_activity_start_reason</string>

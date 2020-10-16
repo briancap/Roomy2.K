@@ -19,6 +19,8 @@ class TestData(){
     lateinit var itemLabel : String
 
     lateinit var itemRemaining : String
+    lateinit var itemDescription : String
+    lateinit var choreFrequency : String
 
     init {
         //string constants
@@ -29,11 +31,15 @@ class TestData(){
                 gridLabel = resources?.getString(R.string.adapter_item_label)
                 itemLabel = resources?.getString(R.string.adapter_item_label)
                 itemRemaining = resources?.getString(R.string.adapter_item_remaining)
+                itemDescription = resources?.getString(R.string.adapter_item_description)
+                choreFrequency = resources?.getString(R.string.adapter_item_chore_frequency)
             }
         } else {
             gridLabel = "adapter_item_label"
             itemLabel = "adapter_item_label"
             itemRemaining = "adapter_item_remaining"
+            itemDescription = "adapter_item_description"
+            choreFrequency = "adapter_item_chore_frequency"
         }
     }
 
@@ -191,6 +197,42 @@ class TestData(){
         map1.put( "paymentMode", "Auto" as Object )
 
         return map1
+    }
+
+
+    /**
+     * ChoreDetail data
+     */
+    fun getChoreDetail() : MutableList<MutableMap<String, String>>{
+        Log.e( LOG_TAG, "in getChoreDetail" )
+        var data : MutableList<MutableMap<String, String>> = mutableListOf()
+
+        val map1: MutableMap<String, String> = mutableMapOf()
+        map1.put( itemLabel, "Clean Kitchen" )
+        map1.put( itemDescription, "Put the lime in the coconut and put the coconut in the damn fridge" )
+        map1.put( choreFrequency, "Bi-Weekly" )
+
+        val map2: MutableMap<String, String> = mutableMapOf()
+        map2.put( itemLabel, "Clean Shower" )
+        map2.put( itemDescription, "Why do showers get so dirty when they make us so clean" )
+        map2.put( choreFrequency, "Weekly" )
+
+        val map3: MutableMap<String, String> = mutableMapOf()
+        map3.put( itemLabel, "Clean Toilet" )
+        map3.put( itemDescription, "Yeah... Cleaning this one makes sense" )
+        map3.put( choreFrequency, "Weekly" )
+
+        val map4: MutableMap<String, String> = mutableMapOf()
+        map4.put( itemLabel, "Sweep Floor" )
+        map4.put( itemDescription, "Sweeping the floor is better than sweeping the leg" )
+        map4.put( choreFrequency, "Monthly" )
+
+        data.add( map1 )
+        data.add( map2 )
+        data.add( map3 )
+        data.add( map4 )
+
+        return data
     }
 
 }

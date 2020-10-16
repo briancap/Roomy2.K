@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name="com.example.roomy2k.HomeDetailActivity"
-            android:label=".BillDetailActivity"/>
+            android:label="Bill Detail"/>
 
     </application>
 
