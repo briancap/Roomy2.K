@@ -29,7 +29,7 @@ import java.util.*
 
 class HomeFragment : Fragment() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     override fun onCreateView(
         inflater: LayoutInflater,

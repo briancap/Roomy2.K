@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import com.example.roomy2k.TestData
 
 class HomeViewModel: ViewModel() {
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     val testData : TestData = TestData()
 

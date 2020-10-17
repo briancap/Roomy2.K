@@ -15,7 +15,7 @@ import com.example.roomy2k.R
 
 class AdapterChore(val context : Context? ) : RecyclerView.Adapter<AdapterChore.ViewHolder>() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var itemLabel : String
     lateinit var itemDescription : String

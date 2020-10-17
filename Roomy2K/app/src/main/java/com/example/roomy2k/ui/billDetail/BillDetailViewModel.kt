@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.roomy2k.TestData
 
 class BillDetailViewModel( val billName : String? ) : ViewModel() {
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     private var billDetailData : MutableMap<String, Object> = mutableMapOf()
     private var billDataRetrieved : Boolean = false

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
 class BillDetailModelFactory( val billName : String? ) : ViewModelProvider.Factory {
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         Log.e( LOG_TAG, "in create" )

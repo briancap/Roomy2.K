@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.nav_header_main.*
 
 class BillDetailFragment : Fragment() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     private lateinit var billDetailViewModel: BillDetailViewModel
 

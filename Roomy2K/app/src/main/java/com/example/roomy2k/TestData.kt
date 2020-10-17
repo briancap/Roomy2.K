@@ -7,7 +7,7 @@ import android.util.Log
 
 class TestData(){
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     constructor( appContext : Context? ) : this(){
         context = appContext

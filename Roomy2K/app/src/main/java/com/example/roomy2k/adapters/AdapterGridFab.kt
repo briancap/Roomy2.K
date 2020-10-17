@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGridFab.ViewHolder>() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var gridLabel : String
     var adapterData : MutableList<MutableMap<String, String>> = mutableListOf()

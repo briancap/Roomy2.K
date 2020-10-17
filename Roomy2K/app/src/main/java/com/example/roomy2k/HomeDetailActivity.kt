@@ -12,10 +12,11 @@ import com.example.roomy2k.ui.home.HomeFragment
 
 class HomeDetailActivity : AppCompatActivity() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_home_detail)
 
         val activityStartReason : String = intent.getStringExtra( resources.getString( R.string.intent_activity_start_reason ) )

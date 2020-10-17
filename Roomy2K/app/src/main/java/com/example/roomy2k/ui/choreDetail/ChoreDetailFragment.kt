@@ -16,7 +16,7 @@ import com.example.roomy2k.adapters.AdapterChore
 
 
 class ChoreDetailFragment : Fragment() {
-val LOG_TAG: String = javaClass.name
+val LOG_TAG: String = javaClass.simpleName
 
     override fun onCreateView(
         inflater: LayoutInflater,

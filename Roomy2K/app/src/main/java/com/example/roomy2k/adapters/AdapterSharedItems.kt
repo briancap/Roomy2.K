@@ -15,7 +15,7 @@ import com.example.roomy2k.R
 
 class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
 
-    val LOG_TAG: String = javaClass.name
+    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var itemLabel : String
     lateinit var itemRemaining : String
