@@ -11,11 +11,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
+import timber.log.Timber
 
 
 class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<AdapterSharedItems.ViewHolder>() {
-
-    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var itemLabel : String
     lateinit var itemRemaining : String
@@ -62,7 +61,7 @@ class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<Adapte
     }
 
     fun setData( data : MutableList<MutableMap<String, Object>>  ){
-        Log.v( LOG_TAG, "in setData" )
+        Timber.v( "in setData" )
         adapterData = data
         notifyDataSetChanged()
     }

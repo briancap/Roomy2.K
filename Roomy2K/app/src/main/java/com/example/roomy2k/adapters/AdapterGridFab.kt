@@ -10,17 +10,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import timber.log.Timber
 
 
 class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGridFab.ViewHolder>() {
-
-    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var gridLabel : String
     var adapterData : MutableList<MutableMap<String, String>> = mutableListOf()
 
     init{
-        Log.v( LOG_TAG, "in init" )
+        Timber.v( "in init" )
         if( context != null ){
             val resources : Resources = context.resources
 
@@ -50,7 +49,7 @@ class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGrid
 
         holder.gridItemFabLabel.text = itemData[ gridLabel ]
         holder.gridItemFab.setOnClickListener {
-            Log.v( LOG_TAG, "FAB clicked position = " + position )
+            Timber.v( "FAB clicked position = " + position )
         }
     }
 
@@ -59,7 +58,7 @@ class AdapterGridFab(val context : Context? ) : RecyclerView.Adapter<AdapterGrid
     }
 
     fun setData( data : MutableList<MutableMap<String, String>> ){
-        Log.v( LOG_TAG, "in setData" )
+        Timber.v( "in setData" )
         adapterData = data
         notifyDataSetChanged()
     }

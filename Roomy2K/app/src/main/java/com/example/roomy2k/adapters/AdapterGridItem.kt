@@ -13,7 +13,6 @@ import com.example.roomy2k.R
 
 class AdapterGridItem(val context : Context?, private val adapterData : MutableList<MutableMap<String, String>> ) : RecyclerView.Adapter<AdapterGridItem.ViewHolder>() {
 
-    val LOG_TAG: String = javaClass.simpleName
     lateinit var gridLabel : String
 
     init{

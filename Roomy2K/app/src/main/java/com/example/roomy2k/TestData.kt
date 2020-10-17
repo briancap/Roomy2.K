@@ -3,11 +3,10 @@ package com.example.roomy2k
 import android.content.Context
 import android.content.res.Resources
 import android.util.Log
+import timber.log.Timber
 
 
 class TestData(){
-
-    val LOG_TAG: String = javaClass.simpleName
 
     constructor( appContext : Context? ) : this(){
         context = appContext
@@ -132,7 +131,7 @@ class TestData(){
      * BillDetail data
      */
     fun getBillData( billName : String? ) : MutableMap<String, Object>{
-        Log.e( LOG_TAG, "starting getBillData" )
+        Timber.i( "starting getBillData" )
         var data : MutableMap<String, Object> = when( billName ) {
             "Rent" -> getRentDetails()
             "Internet" -> getInternetDtails()
@@ -141,14 +140,14 @@ class TestData(){
             else -> mutableMapOf()
         }
 
-        Log.e( LOG_TAG, "data = " + data.get( "amount") )
+        Timber.e( "data = " + data.get( "amount") )
 
-        Log.e( LOG_TAG, "ending getBillData" )
+        Timber.e( "ending getBillData" )
         return data
     }
 
     private fun getRentDetails() : MutableMap<String, Object>{
-        Log.e( LOG_TAG, "in getRentDetails" )
+        Timber.e( "in getRentDetails" )
         val map1: MutableMap<String, Object> = mutableMapOf()
 
         map1.put( "amount", "1048.00" as Object )
@@ -161,7 +160,7 @@ class TestData(){
     }
 
     private fun getInternetDtails() : MutableMap<String, Object>{
-        Log.e( LOG_TAG, "in getInternetDtails" )
+        Timber.e( "in getInternetDtails" )
         val map1: MutableMap<String, Object> = mutableMapOf()
 
         map1.put( "amount", "48.12" as Object )
@@ -174,7 +173,7 @@ class TestData(){
     }
 
     private fun getElectricDetails() : MutableMap<String, Object>{
-        Log.e( LOG_TAG, "in getElectricityDetails" )
+        Timber.i( "in getElectricityDetails" )
         val map1: MutableMap<String, Object> = mutableMapOf()
 
         map1.put( "amount", "30.82" as Object )
@@ -187,7 +186,7 @@ class TestData(){
     }
 
     private fun getGasDetails() : MutableMap<String, Object>{
-        Log.e( LOG_TAG, "in getGasDetails" )
+        Timber.e( "in getGasDetails" )
         val map1: MutableMap<String, Object> = mutableMapOf()
 
         map1.put( "amount", "12.32" as Object )
@@ -204,7 +203,7 @@ class TestData(){
      * ChoreDetail data
      */
     fun getChoreDetail() : MutableList<MutableMap<String, String>>{
-        Log.e( LOG_TAG, "in getChoreDetail" )
+        Timber.e( "in getChoreDetail" )
         var data : MutableList<MutableMap<String, String>> = mutableListOf()
 
         val map1: MutableMap<String, String> = mutableMapOf()

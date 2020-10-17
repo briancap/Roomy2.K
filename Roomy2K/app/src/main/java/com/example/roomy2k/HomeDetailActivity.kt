@@ -8,11 +8,10 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.roomy2k.ui.billDetail.BillDetailFragment
 import com.example.roomy2k.ui.choreDetail.ChoreDetailFragment
 import com.example.roomy2k.ui.home.HomeFragment
+import timber.log.Timber
 
 
 class HomeDetailActivity : AppCompatActivity() {
-
-    val LOG_TAG: String = javaClass.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +19,7 @@ class HomeDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_detail)
 
         val activityStartReason : String = intent.getStringExtra( resources.getString( R.string.intent_activity_start_reason ) )
-        Log.v( LOG_TAG, activityStartReason )
+        Timber.i( activityStartReason )
 
 
 
@@ -29,10 +28,10 @@ class HomeDetailActivity : AppCompatActivity() {
 
 
         if( activityStartReason.equals( resources.getString( R.string.intent_activity_start_reason_detail_bill ) ) ){
-            Log.e( LOG_TAG, "add bill detail fragment to activity")
+            Timber.i( "add bill detail fragment to activity")
 
             val billName : String = intent.getStringExtra( resources.getString( R.string.intent_activity_start_bill_name ) )
-            Log.v( LOG_TAG, "bill name: " + billName )
+            Timber.i( "bill name: " + billName )
 
             val mFragmentBillDetail = BillDetailFragment()
             val bundle = Bundle().apply {
@@ -43,15 +42,15 @@ class HomeDetailActivity : AppCompatActivity() {
             fragmentTransaction.add( R.id.home_detail_container, mFragmentBillDetail )
 
         } else if ( activityStartReason.equals( resources.getString( R.string.intent_activity_start_reason_detail_chore ) ) ){
-            Log.e( LOG_TAG, "add chore detail fragment to activity" )
+            Timber.i( "add chore detail fragment to activity" )
 
             val mFragmentChoreDetail = ChoreDetailFragment()
             fragmentTransaction.add( R.id.home_detail_container, mFragmentChoreDetail )
 
         } else if ( activityStartReason.equals( resources.getString( R.string.intent_activity_start_reason_detail_shared ) ) ){
-            Log.e( LOG_TAG, "add shared detail fragment to activity" )
+            Timber.i( "add shared detail fragment to activity" )
         } else {
-            Log.v( LOG_TAG, "placeholder" )
+            Timber.i( "placeholder" )
         }
 
         fragmentTransaction.commit()

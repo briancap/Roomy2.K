@@ -11,11 +11,10 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
+import timber.log.Timber
 
 
 class AdapterChore(val context : Context? ) : RecyclerView.Adapter<AdapterChore.ViewHolder>() {
-
-    val LOG_TAG: String = javaClass.simpleName
 
     lateinit var itemLabel : String
     lateinit var itemDescription : String
@@ -24,7 +23,7 @@ class AdapterChore(val context : Context? ) : RecyclerView.Adapter<AdapterChore.
     var adapterData : MutableList<MutableMap<String, String>> = mutableListOf()
 
     init{
-        Log.e( LOG_TAG, "in init" )
+        Timber.e( "in init" )
         if( context != null ){
             val resources : Resources = context.resources
 
@@ -64,7 +63,7 @@ class AdapterChore(val context : Context? ) : RecyclerView.Adapter<AdapterChore.
     }
 
     fun setData( data : MutableList<MutableMap<String, String>>  ){
-        Log.e( LOG_TAG, "in setData" )
+        Timber.e( "in setData" )
         adapterData = data
         notifyDataSetChanged()
     }

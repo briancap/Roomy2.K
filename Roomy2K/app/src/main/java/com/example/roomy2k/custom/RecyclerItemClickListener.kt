@@ -16,7 +16,6 @@ class RecyclerItemClickListener( context: Context?, recyclerView: RecyclerView, 
         fun onLongItemClick(view: View?, position: Int)
     }
 
-    val LOG_TAG: String = javaClass.simpleName
     var mGestureDetector: GestureDetector
 
     init {

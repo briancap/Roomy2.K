@@ -3,12 +3,12 @@ package com.example.roomy2k.ui.billDetail
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import timber.log.Timber
 
 class BillDetailModelFactory( val billName : String? ) : ViewModelProvider.Factory {
-    val LOG_TAG: String = javaClass.simpleName
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        Log.e( LOG_TAG, "in create" )
+        Timber.e( "in create" )
         return BillDetailViewModel( billName ) as T
     }
 

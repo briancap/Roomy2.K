@@ -12,11 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomy2k.R
 import com.example.roomy2k.adapters.AdapterChore
-
+import timber.log.Timber
 
 
 class ChoreDetailFragment : Fragment() {
-val LOG_TAG: String = javaClass.simpleName
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +38,7 @@ val LOG_TAG: String = javaClass.simpleName
         listChoreDetail.adapter = choreDetailAdapter
 
         choreDetailViewModel.getChoreData().observe( viewLifecycleOwner, Observer<MutableList<MutableMap<String, String>>>{ chores ->
-            Log.e( LOG_TAG, "in get Chore observe" )
+            Timber.e( "in get Chore observe" )
             choreDetailAdapter.setData( chores )
             choreData = chores
         })
