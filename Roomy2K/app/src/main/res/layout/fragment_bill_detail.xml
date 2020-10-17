@@ -1,269 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-    <TextView
-        android:text="@string/title_bill_overview"
-        android:id="@+id/detail_bill_title_overview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/text_secondary_grey"
-        android:textSize="14sp"
-        android:textAllCaps="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_bill_current_wrapper_amount"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_overview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="match_parent">
 
         <TextView
-            android:text="Amount"
-            android:id="@+id/detail_bill_current_label_amount"
+            android:id="@+id/detail_bill_title_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:text="$1048.00"
-            android:id="@+id/detail_bill_current_value_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_bill_current_wrapper_due"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_amount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:text="Due"
-            android:id="@+id/detail_bill_current_label_due"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:text="May 9"
-            android:id="@+id/detail_bill_current_value_due"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_bill_current_wrapper_payment"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_due"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:text="Payment Method"
-            android:id="@+id/detail_bill_current_label_payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:text="Venmo"
-            android:id="@+id/detail_bill_current_value_payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_bill_current_wrapper_target"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:text="Paid To"
-            android:id="@+id/detail_bill_current_label_target"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:text="Brian"
-            android:id="@+id/detail_bill_current_value_target"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail_bill_current_wrapper_payment_mode"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_target"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:text="Payment Mode"
-            android:id="@+id/detail_bill_current_label_payment_mode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:text="Auto"
-            android:id="@+id/detail_bill_current_value_payment_mode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_main_black"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
-
-        <TextView
-            android:text="Money will be transferred without prompt"
-            android:id="@+id/detail_bill_current_subtext_payment_mode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_bill_overview"
+            android:textAllCaps="true"
             android:textColor="@color/text_secondary_grey"
-            android:textSize="12sp"
-            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_label_payment_mode"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_bill_current_wrapper_amount"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_title_overview">
+
+            <TextView
+                android:id="@+id/detail_bill_current_label_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_value_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1048.00"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_bill_current_wrapper_due"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_amount">
+
+            <TextView
+                android:id="@+id/detail_bill_current_label_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_value_due"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="May 9"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_bill_current_wrapper_payment"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_due">
+
+            <TextView
+                android:id="@+id/detail_bill_current_label_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Method"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_value_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Venmo"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_bill_current_wrapper_target"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment">
+
+            <TextView
+                android:id="@+id/detail_bill_current_label_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paid To"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_value_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brian"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_bill_current_wrapper_payment_mode"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_target">
+
+            <TextView
+                android:id="@+id/detail_bill_current_label_payment_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Mode"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_value_payment_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto"
+                android:textColor="@color/text_main_black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detail_bill_current_subtext_payment_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Money will be transferred without prompt"
+                android:textColor="@color/text_secondary_grey"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_bill_current_label_payment_mode" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/detail_bill_title_manage_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/title_bill_manage_account"
+            android:textAllCaps="true"
+            android:textColor="@color/text_secondary_grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment_mode" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_bill_activate_service"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Activate Service"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_title_manage_account"
+            app:strokeColor="@color/colorAccent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_bill_transfer_bill_ownership"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Transfer Bill Ownership"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_activate_service"
+            app:strokeColor="@color/colorAccent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detail_bill_change_payment"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Change Payment"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_bill_transfer_bill_ownership"
+            app:strokeColor="@color/colorAccent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <TextView
-        android:text="@string/title_bill_manage_account"
-        android:id="@+id/detail_bill_title_manage_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/text_secondary_grey"
-        android:textSize="14sp"
-        android:textAllCaps="true"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_current_wrapper_payment_mode"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/detail_bill_activate_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activate Service"
-        android:textColor="@color/colorAccent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:strokeColor="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_title_manage_account"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/detail_bill_transfer_bill_ownership"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Transfer Bill Ownership"
-        android:textColor="@color/colorAccent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:strokeColor="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_activate_service"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/detail_bill_change_payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change Payment"
-        android:textColor="@color/colorAccent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:strokeColor="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@id/detail_bill_transfer_bill_ownership"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

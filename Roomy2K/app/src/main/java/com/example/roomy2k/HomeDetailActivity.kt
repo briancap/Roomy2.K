@@ -3,8 +3,10 @@ package com.example.roomy2k
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.example.roomy2k.databinding.ActivityHomeDetailBinding
 import com.example.roomy2k.ui.billDetail.BillDetailFragment
 import com.example.roomy2k.ui.choreDetail.ChoreDetailFragment
 import com.example.roomy2k.ui.home.HomeFragment
@@ -13,10 +15,13 @@ import timber.log.Timber
 
 class HomeDetailActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityHomeDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_home_detail)
+        //setContentView(R.layout.activity_home_detail)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home_detail )
 
         val activityStartReason : String = intent.getStringExtra( resources.getString( R.string.intent_activity_start_reason ) )
         Timber.i( activityStartReason )
