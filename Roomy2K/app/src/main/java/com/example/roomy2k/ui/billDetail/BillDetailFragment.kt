@@ -33,7 +33,7 @@ class BillDetailFragment : Fragment() {
         //val billDetailViewModel : BillDetailViewModel by viewModels()
         //billDetailViewModel.setBillName( billName )
 
-        val billDetailViewModel = ViewModelProvider(this, BillDetailModelFactory(billName)).get(
+        billDetailViewModel = ViewModelProvider(this, BillDetailModelFactory(billName)).get(
             BillDetailViewModel::class.java
         )
 
@@ -42,41 +42,44 @@ class BillDetailFragment : Fragment() {
         // val root = inflater.inflate(R.layout.fragment_bill_detail, container, false)
         binding = DataBindingUtil.inflate( inflater, R.layout.fragment_bill_detail, container, false )
 
-        Timber.e("end initializing data binding")
 
-        billDetailViewModel.amount.observe(viewLifecycleOwner, Observer<String?> { amount ->
-            Timber.e("in amount observe")
-            //textViewAmount.text = amount
-            binding.detailBillCurrentValueAmount.text = amount
-        })
 
-        billDetailViewModel.due.observe(viewLifecycleOwner, Observer<String?> { due ->
-            Timber.e("in amount observe")
-            //textViewDue.text = due
-            binding.detailBillCurrentValueDue.text = due
-        })
+        binding.apply {
+            Timber.e("in binding apply")
 
-        billDetailViewModel.paymentMethod.observe(
-            viewLifecycleOwner,
-            Observer<String?> { paymentMethod ->
+            billDetailViewModel.amount.observe(viewLifecycleOwner, Observer<String?> { amount ->
+                Timber.e("in amount observe")
+                //textViewAmount.text = amount
+                detailBillCurrentValueAmount.text = amount
+            })
+
+            billDetailViewModel.due.observe(viewLifecycleOwner, Observer<String?> { due ->
+                Timber.e("in amount observe")
+                //textViewDue.text = due
+                detailBillCurrentValueDue.text = due
+            })
+
+            billDetailViewModel.paymentMethod.observe(viewLifecycleOwner, Observer<String?> { paymentMethod ->
                 Timber.e("in amount observe")
                 //textViewPaymentMethod.text = paymentMethod
-                binding.detailBillCurrentValuePayment.text = paymentMethod
+                detailBillCurrentValuePayment.text = paymentMethod
             })
 
-        billDetailViewModel.paidTo.observe(viewLifecycleOwner, Observer<String?> { paidTo ->
-            Timber.e("in amount observe")
-            //textViewPaidTo.text = paidTo
-            binding.detailBillCurrentValueTarget.text = paidTo
-        })
+            billDetailViewModel.paidTo.observe(viewLifecycleOwner, Observer<String?> { paidTo ->
+                Timber.e("in amount observe")
+                //textViewPaidTo.text = paidTo
+                detailBillCurrentValueTarget.text = paidTo
+            })
 
-        billDetailViewModel.paymentMode.observe(
-            viewLifecycleOwner,
-            Observer<String?> { paymentMode ->
+            billDetailViewModel.paymentMode.observe(viewLifecycleOwner, Observer<String?> { paymentMode ->
                 Timber.e("in amount observe")
                 //textViewPaymentMode.text = paymentMode
-                binding.detailBillCurrentValuePaymentMode.text = paymentMode
+                detailBillCurrentValuePaymentMode.text = paymentMode
             })
+
+
+        }
+
 
         return binding.root
     }
