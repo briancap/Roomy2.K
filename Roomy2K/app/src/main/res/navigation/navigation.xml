@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.roomy2k.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_billDetailFragment"
+            app:destination="@id/billDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_choreDetailFragment"
+            app:destination="@id/choreDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/billDetailFragment"
+        android:name="com.example.roomy2k.ui.billDetail.BillDetailFragment"
+        android:label="BillDetailFragment" />
+
+    <fragment
+        android:id="@+id/choreDetailFragment"
+        android:name="com.example.roomy2k.ui.choreDetail.ChoreDetailFragment"
+        android:label="ChoreDetailFragment" />
+
+</navigation>

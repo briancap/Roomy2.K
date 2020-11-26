@@ -42,7 +42,7 @@ class AdapterSharedItems( val context : Context? ) : RecyclerView.Adapter<Adapte
     ): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_shared_item, parent, false)
-        
+
         return ViewHolder(view)
     }
 
