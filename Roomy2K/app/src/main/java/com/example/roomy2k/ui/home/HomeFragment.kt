@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -69,6 +70,11 @@ class HomeFragment : Fragment() {
                             putExtra( resources.getString( R.string.intent_activity_start_bill_name ), billData.get( position ).get( resources.getString( R.string.adapter_item_label ) ) )
                         }
                         startActivity( intent )
+
+                        Timber.v( "using nav controller to navigate to bill detail fragment" )
+                        root.findNavController().
+                        navigate(R.id.action_homeFragment_to_billDetailFragment)
+
                     }
 
                     override fun onLongItemClick(view: View?, position: Int) {
